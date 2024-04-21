@@ -1,3 +1,6 @@
+import { nanoid } from 'nanoid'
+import { form, productList } from '../selectors/selectors.js'
+
 // Отправка данных при создании нового товара через FormData
 form.addEventListener('submit', async (event) => {
   event.preventDefault() // предотвр. отправку данных
