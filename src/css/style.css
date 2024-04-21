@@ -8,6 +8,14 @@
 @import '../css/components/notification.css';
 @import '../css/components/sidebar.css';
 
+:root {
+  scrollbar-width: none; /* убрать скролл у мозилы */
+
+  ::-webkit-scrollbar {
+    width: 0;
+  } /* Убрать скролл у браузеров */
+}
+
 body {
   font-family: 'Messina Sans', sans-serif;
   color: #18191f;
