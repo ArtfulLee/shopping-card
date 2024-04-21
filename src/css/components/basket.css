@@ -40,7 +40,7 @@
 /* отдельная карточка */
 .item-card {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
   align-items: flex-start;
   background-color: #fff;
   margin-bottom: 8px;
@@ -48,14 +48,16 @@
   border: 1px solid #000;
 }
 
-.item-image {
-  width: 240px;
+.item-image img {
+  display: block;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
 }
 
-.item-image img {
-  max-width: 100%;
-  min-height: 240px;
-  object-fit: cover;
+.item-card-description {
+  display: flex;
+  flex-direction: column;
 }
 
 .close-button {

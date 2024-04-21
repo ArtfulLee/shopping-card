@@ -1,8 +1,9 @@
 import { nanoid } from 'nanoid'
 import { generateProductCardHTML } from './productCard'
-import { form } from '../selectors/selectors'
+import { form, basketList } from '../selectors/selectors'
 
 let PRODDUCTS = [] // Переменная для хранения данных о продуктах.
+const BasketsProductForLocalStorage = []
 
 // Функция подгрузки данных из db.json
 export async function loadJSON() {
@@ -32,6 +33,34 @@ export function addProductToBasket(event) {
   if (product) {
     // Добавляем товар в корзину и т.д.
     console.log(product)
+
+    // Проверяем, был ли данный товар ранее добавлен в корзину
+    if (basketList.querySelector(`[data-id="${product?.id}"]`)) {
+      // Добавить нотиф, что товар уже есть в корзине
+      // Пока тут алерт для загрушки
+      alert('Вы уже добавляли этот товар в корзину')
+    } else {
+      //Добавляем товар в хранилище браузера.
+      BasketsProductForLocalStorage.push(product)
+      localStorage.setItem('BasketsProductForLocalStorage', JSON.stringify(BasketsProductForLocalStorage))
+
+      // Разметка для карточки в корзине
+      const cardContainerForBasketsProduct = `
+      <div class="item-card" data-id="${product?.id}">
+        <div class="item-image">
+          <img class="" src="${product?.imgSrc}" alt="image">
+        </div>
+        <div class="item-card-description">
+          <h3 class="card-name">${product?.name}</h3>
+          <p class="card-category">${product?.category}</p>
+          <p class="card-price">${product?.price}</p>
+        </div>
+      </?div>
+    `
+
+      // добавляем товар в корзину
+      basketList.insertAdjacentHTML('beforeend', cardContainerForBasketsProduct)
+    }
   } else {
     console.error(`Товар с ID ${id} не найден`)
   }
