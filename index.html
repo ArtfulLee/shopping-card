@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="flex">
+          <a class="header-logo" href="index.html">
+            <svg
+              width="60"
+              height="19"
+              viewBox="0 0 60 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <defs />
+              <path
+                id="Avion"
+                d="M31.24 1.36C31.24 2.11 30.6 2.72 29.81 2.72C29.03 2.72 28.38 2.11 28.38 1.36C28.38 0.61 29.03 0 29.81 0C30.6 0 31.24 0.61 31.24 1.36ZM3.58 13.05L1.83 18L-0.39 18L6.02 0.54L8.2 0.54L14.61 18L12.4 18L10.64 13.05L3.58 13.05ZM7.04 3.3L4.25 11.17L9.97 11.17L7.17 3.3L7.04 3.3ZM45.73 11.52C45.73 15.58 43.35 18.27 39.8 18.27C36.26 18.27 33.87 15.58 33.87 11.52C33.87 7.42 36.26 4.74 39.8 4.74C43.35 4.74 45.73 7.42 45.73 11.52ZM54.16 6.54C52.23 6.54 50.81 7.83 50.81 10.12L50.81 18L48.8 18L48.8 4.91L50.75 4.91L50.75 6.95L50.92 6.95C51.53 5.62 52.76 4.74 54.74 4.74C57.38 4.74 59.17 6.33 59.17 9.67L59.17 18L57.16 18L57.16 9.82C57.16 7.76 56.02 6.54 54.16 6.54ZM23.95 4.91L26.13 4.91L21.29 18L19.25 18L14.41 4.91L16.59 4.91L20.2 15.33L20.34 15.33L23.95 4.91ZM30.8 18L28.79 18L28.79 4.91L30.8 4.91L30.8 18ZM35.88 11.52C35.88 14.15 37.11 16.46 39.8 16.46C42.49 16.46 43.72 14.15 43.72 11.52C43.72 8.9 42.49 6.54 39.8 6.54C37.11 6.54 35.88 8.9 35.88 11.52Z"
+                fill="#22202E"
+                fill-opacity="1"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+
+          <nav class="header-nav">
+            <a class="nav-link active" href="/">SHOP</a>
+            <a class="nav-link" href="#">ABOUT US</a>
+            <a class="nav-link" href="#">CONTACT</a>
+          </nav>
+
+          <div class="header-buttons flex">
+            <button class="btn-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H20" stroke="#17183B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 6H17" stroke="#17183B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18H16" stroke="#17183B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <button class="btn-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                  stroke="#17183B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 21L16.65 16.65"
+                  stroke="#17183B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <button id="show-sidebar" class="btn-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 22C14.4477 22 14 21.5523 14 21C14 20.4477 14.4477 20 15 20C15.5523 20 16 20.4477 16 21C16 21.5523 15.5523 22 15 22Z"
+                  stroke="#17183B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4 22C3.44772 22 3 21.5523 3 21C3 20.4477 3.44772 20 4 20C4.55228 20 5 20.4477 5 21C5 21.5523 4.55228 22 4 22Z"
+                  stroke="#17183B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M23 1H19L16.32 14.39C16.2286 14.8504 15.9781 15.264 15.6125 15.5583C15.2468 15.8526 14.7893 16.009 14.32 16H4.6C4.1307 16.009 3.67318 15.8526 3.30754 15.5583C2.94191 15.264 2.69145 14.8504 2.6 14.39L1 6H18"
+                  stroke="#17183B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="basket-count__info"></span>
+            </button>
+
+            <dialog class="modal" id="modal-basket">
+              <header class="modal-header">
+                <button id="close-button" class="button close-button">
+                  <svg
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    role="presentation"
+                    focusable="false"
+                    style="
+                      display: block;
+                      fill: none;
+                      height: 16px;
+                      width: 16px;
+                      stroke: currentcolor;
+                      stroke-width: 3;
+                      overflow: visible;
+                    "
+                  >
+                    <path d="m6 6 20 20"></path>
+                    <path d="m26 6-20 20"></path>
+                  </svg>
+                </button>
+              </header>
+
+              <section class="modal-body">
+                <h2 class="modal-body__total">Total: $</h2>
+                <span class="basket__total-value"></span>
+
+                <div class="basket-container__list">
+                  <!-- вставка добавленного товара  -->
+                </div>
+              </section>
+
+              <footer class="modal-footer"></footer>
+            </dialog>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Сайдбар корзины товаров  -->
+    <dialog class="sidebar" id="sidebar">
+      <div class="sidebar-wrapper">
+        <header>
+          <h2 class="sidebar-title">Товары в корзине</h2>
+          <div class="btn-icon" id="close-sidebar">
+            <svg width="12" height="12" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 0.7L7.3 0L4 3.3L0.7 0L0 0.7L3.3 4L0 7.3L0.7 8L4 4.7L7.3 8L8 7.3L4.7 4L8 0.7Z"
+                fill="#161616"
+              />
+            </svg>
+          </div>
+        </header>
+        <section id="basket-list">
+          <!-- Добавленные товары здесь  -->
+        </section>
+      </div>
+    </dialog>
+
+    <main>
+      <section class="products p-48">
+        <div class="container">
+          <h2 class="title">Products</h2>
+
+          <!-- Компонент степпер  -->
+          <div class="counter">
+            <label class="counter__field">
+              <input class="counter__input" type="text" value="1" maxlength="3" readonly autocomplete="off" />
+              <span class="counter__text">шт</span>
+            </label>
+            <div class="counter__btns">
+              <button class="counter__btn counter__btn--up" aria-label="Увеличить количество">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+                  <g>
+                    <g>
+                      <path d="M3.904-.035L-.003 3.151 1.02 5.03l2.988-2.387 2.988 2.387 1.022-1.88-3.89-3.186z"></path>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <button disabled class="counter__btn counter__btn--down" aria-label="Уменьшить количество">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+                  <g>
+                    <g>
+                      <path d="M3.904 5.003L-.003 1.818 1.02-.062l2.988 2.386L6.995-.063l1.022 1.88-3.89 3.186z"></path>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Форма создания товара  -->
+          <div class="form-container">
+            <h2>Add Product</h2>
+            <form id="productForm">
+              <div>
+                <label for="productName">Name*</label>
+                <input autocomplete="off" type="text" id="productName" name="name" required />
+                <span id="name-error"></span>
+              </div>
+
+              <div>
+                <label for="productCategory">Category* </label>
+                <select id="productCategory" name="category" required autocomplete="off">
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Clothing">Clothing</option>
+                  <option value="Books">Books</option>
+                </select>
+                <span id="category-error"></span>
+              </div>
+
+              <div>
+                <label for="productRating">Rating*</label>
+                <input autocomplete="off" type="text" id="productRating" name="rating" required />
+                <span id="rating-error"></span>
+              </div>
+
+              <div>
+                <label for="productPrice">Price*</label>
+                <input autocomplete="off" type="text" id="productPrice" name="price" required />
+                <span id="price-error"></span>
+              </div>
+
+              <div>
+                <label for="productImgSrc">Image Source</label>
+                <input autocomplete="off" type="url" id="productImgSrc" name="imgSrc" />
+              </div>
+
+              <!-- <div>
+                <label for="productImgSrc">Upload Image</label>
+                <input type="file" id="productImgSrc" name="imgSrc" accept="image/*" autocomplete="off" />
+              </div> -->
+
+              <button>Add Product</button>
+            </form>
+          </div>
+
+          <div class="products-list">
+            <!-- вставка данных  -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="src/js/script.js"></script>
+    <script src="src/js/components/stepper.js"></script>
+  </body>
+</html>
