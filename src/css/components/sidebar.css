@@ -22,7 +22,7 @@
 
 .sidebar-wrapper {
   background-color: white;
-  width: 600px;
+  max-width: 600px;
   height: 100vh;
   position: absolute;
   padding: 20px;
