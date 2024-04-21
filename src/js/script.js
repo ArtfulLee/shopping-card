@@ -1,6 +1,7 @@
 import { formValidate } from './forms/formValidate'
 import { Sidebar } from './components/sidebar'
 import { loadJSON } from './products/productService'
+import { renderBasketFromLocalStorage } from './storage/renderBasketFromLocalStorage'
 // import { Notification } from './components/notification'
 
 /**
@@ -10,6 +11,10 @@ const init = (() => {
   window.addEventListener('DOMContentLoaded', () => {
     loadJSON()
     formValidate() //  Валидация формы
+
+    const getBasketsProductFromLocalStorage = JSON.parse(localStorage.getItem('BasketsProductForLocalStorage'))
+
+    getBasketsProductFromLocalStorage && renderBasketFromLocalStorage(getBasketsProductFromLocalStorage)
   })
 })()
 

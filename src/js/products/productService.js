@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 import { generateProductCardHTML } from './productCard'
-import { form } from '../selectors/selectors'
+import { form, basketList } from '../selectors/selectors'
 
 let PRODDUCTS = [] // Переменная для хранения данных о продуктах.
 const BasketsProductForLocalStorage = []
@@ -33,9 +33,6 @@ export function addProductToBasket(event) {
   if (product) {
     // Добавляем товар в корзину и т.д.
     console.log(product)
-
-    // Получаем секцию корзины для вставки выбраных товаров
-    const basketList = document.querySelector('#basket-list')
 
     // Проверяем, был ли данный товар ранее добавлен в корзину
     if (basketList.querySelector(`[data-id="${product?.id}"]`)) {
