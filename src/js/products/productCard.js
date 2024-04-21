@@ -1,4 +1,4 @@
-import { productList } from '../selectors/selectors.js'
+import { productList } from '../selectors/selectors'
 import { addProductToBasket } from './productService'
 
 /**
